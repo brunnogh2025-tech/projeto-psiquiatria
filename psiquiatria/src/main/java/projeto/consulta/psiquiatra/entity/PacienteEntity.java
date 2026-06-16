@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
+import java.util.List;
+
 @Entity
 @Table(name = "paciente")
 public class PacienteEntity {
@@ -23,4 +25,6 @@ public class PacienteEntity {
     @NotBlank
     private byte idade;
 
+    @OneToMany(cascade = CascadeType.PERSIST)
+    private List<ConsultaEntity> consultas;
 }
