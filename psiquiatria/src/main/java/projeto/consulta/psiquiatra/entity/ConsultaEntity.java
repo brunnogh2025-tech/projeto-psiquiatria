@@ -18,6 +18,11 @@ public class ConsultaEntity {
 
     private String paciente_nome;
 
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private PsiquiatraEntity psiquiatra_id;
+
+    private String psiquiatra_nome;
+
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime dataHora;
 }
