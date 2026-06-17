@@ -13,7 +13,7 @@ public class ConsultaEntity {
     @Column(name = "consulta_id")
     private Long id;
 
-    @ManyToOne()
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private PacienteEntity paciente_id;
 
     private String paciente_nome;
